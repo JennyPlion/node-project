@@ -1,6 +1,11 @@
 {
   "dependencies": {
     "@nestjs/microservices": "^9.1.4",
-    "kafkajs": "^2.2.1"
+    "@nestjs/mongoose": "^9.2.0",
+    "kafkajs": "^2.2.1",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^9.1.4"
   }
 }
