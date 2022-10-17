@@ -9,4 +9,9 @@ export class AppController {
   getHello(@Param('id') id) {
     return this.appService.getUserById(id);
   }
+
+  @Get()
+  getAllUsers(){
+    return this.appService.getAllUsers();
+  }
 }
