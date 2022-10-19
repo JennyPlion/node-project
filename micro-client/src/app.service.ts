@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Client, ClientKafka, Transport } from '@nestjs/microservices';
+import { ClientKafka } from '@nestjs/microservices';
 
 @Injectable()
 export class AppService {

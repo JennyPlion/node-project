@@ -1,6 +1,6 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { Controller } from '@nestjs/common';
+// import { CreateUserDto } from './dto/create-user.dto';
+// import { UpdateUserDto } from './dto/update-user.dto';
 
 import { User } from './schemas/user.schema';
 import { UsersService } from './users.service';
@@ -13,14 +13,12 @@ export class UsersController {
   @MessagePattern('user-topic') // topic name here
   async getUser(@Payload() message): Promise<User> {
     const id = message.userid;
-    console.log("--------------------id", id);
-    
     return this.usersService.getUserById(id);
   }
 
   @MessagePattern('get-all-users-topic') // topic name here
   async getUsers(): Promise<User[]> {
-      return this.usersService.getUsers();
+    return this.usersService.getUsers();
   }
 
   // @Post()
