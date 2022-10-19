@@ -1,37 +1,40 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { Client, ClientKafka, Transport } from '@nestjs/microservices';
 
 @Injectable()
 export class AppService {
-  @Client({
-    transport: Transport.KAFKA,
-    options: {
-      client: {
-        clientId: 'user',
-        brokers: ['localhost:9092'],
-      },
-      consumer: {
-        groupId: 'user-consumer', // consumer same as in micro service
-      },
-    },
-  })
-  client: ClientKafka;
+  // @Client({
+  //   transport: Transport.KAFKA,
+  //   options: {
+  //     client: {
+  //       clientId: 'user',
+  //       brokers: ['localhost:9092'],
+  //     },
+  //     consumer: {
+  //       groupId: 'user-consumer', // consumer same as in micro service
+  //     },
+  //   },
+  // })
+  // client: ClientKafka;
+  constructor(
+    @Inject('POST_SERVICE') private postService: ClientKafka,
+  ){}
 
   async onModuleInit() {
     /**
      * Here We need to subscribe to topic,
      * so that we get response back
      */
-    this.client.subscribeToResponseOf('user-topic');
-    this.client.subscribeToResponseOf('get-all-users-topic');
-    await this.client.connect();
+    this.postService.subscribeToResponseOf('user-topic');
+    this.postService.subscribeToResponseOf('get-all-users-topic');
+    await this.postService.connect();
   }
 
   getUserById(id: number) {
-    return this.client.send('user-topic', { userid: id });
+    return this.postService.send('user-topic', { userid: id });
   }
 
   getAllUsers() {
-    return this.client.send('get-all-users-topic', { title: 'get all' });
+    return this.postService.send('get-all-users-topic', { title: 'get all' });
   }
 }
