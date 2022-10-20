@@ -10,15 +10,21 @@ export class ConfigService {
 
     this.envConfig.postService = {
       options: {
-        client: {
-          clientId: 'post-client',
-          brokers: ['localhost:9092'],
-        },
-        consumer: {
-          groupId: 'post-consumer',
+        // client: {
+        //   clientId: 'post-client',
+        //   brokers: ['localhost:9092'],
+        // },
+        // consumer: {
+        //   groupId: 'post-consumer',
+        // },
+
+        urls: ['amqp://localhost:5672'],
+        queue: 'post_queue',
+        queueOptions: {
+          durable: false
         },
       },
-      transport: Transport.KAFKA,
+      transport: Transport.RMQ,
     };
   }
 

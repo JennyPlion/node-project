@@ -17,7 +17,7 @@ export class AppService {
   // })
   // client: ClientKafka;
   constructor(
-    @Inject('POST_SERVICE') private postService: ClientKafka,
+    @Inject('POST_SERVICE') private postService,
   ){}
 
   async onModuleInit() {
@@ -25,9 +25,9 @@ export class AppService {
      * Here We need to subscribe to topic,
      * so that we get response back
      */
-    this.postService.subscribeToResponseOf('user-topic');
-    this.postService.subscribeToResponseOf('get-all-users-topic');
-    await this.postService.connect();
+    // this.postService.subscribeToResponseOf('user-topic');
+    // this.postService.subscribeToResponseOf('get-all-users-topic');
+    // await this.postService.connect();
   }
 
   getUserById(id: number) {

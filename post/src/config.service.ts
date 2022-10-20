@@ -10,15 +10,21 @@ export class ConfigService {
 
     this.envConfig.userService = {
       options: {
-        client: {
-          clientId: 'user-client',
-          brokers: ['localhost:9092'],
-        },
-        consumer: {
-          groupId: 'user-consumer',
+        // client: {
+        //   clientId: 'user-client',
+        //   brokers: ['localhost:9092'],
+        // },
+        // consumer: {
+        //   groupId: 'user-consumer',
+        // },
+
+        urls: ['amqp://localhost:5672'],
+        queue: 'client_queue',
+        queueOptions: {
+          durable: false,
         },
       },
-      transport: Transport.KAFKA,
+      transport: Transport.RMQ,
     };
   }
 
