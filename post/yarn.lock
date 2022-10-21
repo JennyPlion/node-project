@@ -716,6 +716,14 @@
     "tslib" "2.4.0"
     "uuid" "9.0.0"
 
+"@nestjs/microservices@^9.0.0", "@nestjs/microservices@^9.1.4":
+  "integrity" "sha512-aNDaDlb5P8pC3++Zkp+sSaweKovPR2hg55iZsXZSwYQKGb+GC/gsKMp9kGyE1a5aPhoHD8UAM98Ff7s4Qp8tvg=="
+  "resolved" "https://registry.npmjs.org/@nestjs/microservices/-/microservices-9.1.4.tgz"
+  "version" "9.1.4"
+  dependencies:
+    "iterare" "1.2.1"
+    "tslib" "2.4.0"
+
 "@nestjs/mongoose@^9.2.0":
   "integrity" "sha512-fC33b8nwR7C3y6hlTyKjiHQVU57SFOd3Dwa6alWj3BOhK5bHt8Ld6qOK2G35/XXPHjtSIk3LIKEqwyK5xGcmBA=="
   "resolved" "https://registry.npmjs.org/@nestjs/mongoose/-/mongoose-9.2.0.tgz"
@@ -1311,7 +1319,7 @@
     "require-from-string" "^2.0.2"
     "uri-js" "^4.2.2"
 
-"amqp-connection-manager@^4.1.7":
+"amqp-connection-manager@*", "amqp-connection-manager@^4.1.7":
   "integrity" "sha512-CbNev3Nr8rIzngwrpfWlgUqgJzSwA2cUNe6vMfNTzeKfShpkr4ZsUDadKY4nzbBrZC0s+lravXmlNg6eEzP7EQ=="
   "resolved" "https://registry.npmjs.org/amqp-connection-manager/-/amqp-connection-manager-4.1.7.tgz"
   "version" "4.1.7"
@@ -3290,6 +3298,11 @@
     "universalify" "^2.0.0"
   optionalDependencies:
     "graceful-fs" "^4.1.6"
+
+"kafkajs@*", "kafkajs@^2.2.2":
+  "integrity" "sha512-9wpGLAwRVbVtSew3xwi2f2BMuYLXWhYcoYB/O7gd1JYOYuYTAEC60CeFgRQugI016MxqvOKnOOA+l1jx+4b84g=="
+  "resolved" "https://registry.npmjs.org/kafkajs/-/kafkajs-2.2.2.tgz"
+  "version" "2.2.2"
 
 "kareem@2.4.1":
   "integrity" "sha512-aJ9opVoXroQUPfovYP5kaj2lM7Jn02Gw13bL0lg9v0V7SaUc0qavPs0Eue7d2DcC3NjqI6QAUElXNsuZSeM+EA=="
